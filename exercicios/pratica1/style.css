@@ -1,0 +1,156 @@
+/* =========================================
+   RESET & CONFIGURAÇÕES GERAIS
+   ========================================= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* =========================================
+   BACKGROUND ANIMADO E SCROLLBAR (Tons Azuis Escuros)
+   ========================================= */
+body {
+    font-family: "Inter", system-ui, sans-serif;
+    /* Gradiente fluido com tons profundos de azul e preto azulado */
+    background: linear-gradient(-45deg,
+            #020617,
+            #090d16,
+            #0f172a,
+            #172554,
+            #1e3a8a);
+    background-size: 400% 400%;
+    animation: gradientFluid 15s ease infinite;
+
+    color: #f0f9ff;
+    min-height: 100vh;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+/* Scrollbar com detalhes em azul claro */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(2, 6, 23, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(56, 189, 248, 0.2);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(56, 189, 248, 0.4);
+}
+
+/* =========================================
+   TIPOGRAFIA (Título em degrade azul/ciano)
+   ========================================= */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    font-weight: 800;
+    text-align: center;
+    background: linear-gradient(to right, #38bdf8, #2563eb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 10px 30px rgba(37, 99, 235, 0.3);
+}
+
+/* =========================================
+   GRID DE PRODUTOS
+   ========================================= */
+ul {
+    list-style: none;
+    width: 100%;
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* =========================================
+   CARDS DE PRODUTOS (GLASSMORPHISM AZULADO)
+   ========================================= */
+li {
+    /* Vidro fosco com fundo azulado escuro translúcido */
+    background: rgba(15, 23, 42, 0.65);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(56, 189, 248, 0.15);
+    box-shadow: 0 8px 32px 0 rgba(2, 6, 23, 0.4);
+
+    padding: 20px 24px;
+    border-radius: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500;
+    font-size: 1.1rem;
+    color: #e0f2fe;
+
+    transition:
+        transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+        box-shadow 0.4s ease,
+        background 0.4s ease,
+        border-color 0.4s ease;
+}
+
+/* Interação ao passar o mouse (ilumina em azul) */
+li:hover {
+    transform: translateY(-8px) scale(1.02);
+    background: rgba(30, 58, 138, 0.45);
+    box-shadow: 0 15px 45px 0 rgba(14, 116, 144, 0.3);
+    border: 1px solid rgba(56, 189, 248, 0.5);
+    z-index: 2;
+}
+
+/* =========================================
+   ALERTA CRÍTICO (Mantido em vermelho pulsante para contraste)
+   ========================================= */
+.alert-pulse {
+    background: rgba(239, 68, 68, 0.15) !important;
+    border: 1px solid rgba(239, 68, 68, 0.6) !important;
+    color: #fca5a5;
+    font-weight: 700;
+    animation: pulseNeon 1.5s infinite alternate;
+}
+
+/* =========================================
+   KEYFRAMES (ANIMAÇÕES)
+   ========================================= */
+@keyframes gradientFluid {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes pulseNeon {
+    from {
+        box-shadow:
+            0 0 10px rgba(239, 68, 68, 0.2),
+            inset 0 0 10px rgba(239, 68, 68, 0.1);
+        transform: scale(1);
+    }
+
+    to {
+        box-shadow:
+            0 0 25px rgba(239, 68, 68, 0.6),
+            inset 0 0 20px rgba(239, 68, 68, 0.3);
+        transform: scale(1.03);
+    }
+}

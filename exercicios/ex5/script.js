@@ -1,0 +1,3 @@
+//Crie uma arrow function que receba a horaAtual (um número de 0 a 23). Use if, else if e else para retornar "Bom dia" (se for entre 6 e 12), "Boa tarde" (entre 12 e 18) e "Boa noite" para os demais horários.
+const saudacao = (horaAtual) => {if (horaAtual >= 6 && horaAtual <= 12) {console.log('Bom dia')} else if (horaAtual > 12 && horaAtual <= 18) {console.log('Boa tarde')} else {console.log('Boa noite')}};
+saudacao(16);

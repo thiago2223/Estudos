@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Produto</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header class="glass-header">
+        <div class="logo-area">
+            <h1>Cadastramento de Produtos</h1>
+        </div>
+        <nav class="nav-menu">
+            <a href="index.html" class="btn-nav btn-outline">← Loja Oficial</a>
+        </nav>
+    </header>
+
+    <main class="container form-container">
+        <form id="form-cadastro" class="glass-form">
+            <section id="foto-e-nome-do-produto" class="form-group">
+                <label for="nomeProduto">Nome do Produto</label>
+                <input type="text" id="nomeProduto" required placeholder="Ex: Tênis Esportivo">
+                
+                <label for="urlFoto">URL da Foto</label>
+                <input type="url" id="urlFoto" required placeholder="https://link-da-imagem.jpg">
+            </section>
+            
+            <section id="descricao-tags-e-tipo-do-produto-e-publi" class="form-group">
+                <label for="tipoProduto">Tipo</label>
+                <select id="tipoProduto">
+                    <option value="acessorio">Acessório</option>
+                    <option value="vestimenta">Vestimenta</option>
+                    <option value="item">Item</option>
+                </select>
+
+                <label for="descProduto">Descrição</label>
+                <textarea id="descProduto" rows="3" required placeholder="Detalhes do produto..."></textarea>
+                
+                <button type="submit" class="btn-submit">Publicar Produto</button>
+            </section>
+        </form>
+    </main>
+
+    <footer class="glass-footer">
+        <div id="dev" class="footer-info">
+            <p>Desenvolvido por: <a href="#">DevThiagoCBM</a></p>
+        </div>
+    </footer>
+</body>
+</html>
